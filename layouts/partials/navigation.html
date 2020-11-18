@@ -1,9 +1,13 @@
-<nav>
-	{{ range .Site.Menus }}
-		<ul class="nav">
-			{{ range . }}
-				<li><a {{ if eq .Name "Mastodon" }}rel="me" {{ end }}href="{{ .URL }}"><span>{{ .Name }}</span></a></li>
-			{{ end }}
-		</ul>
-	{{ end }}
+<nav id="sidebar">
+	<ul>
+	{{- range .Site.Menus.main }}
+		<li><a {{ if or ( eq .Name "Mastodon" ) ( eq .Name "Twitter" ) }}rel="me" {{ end }}href="{{ .URL }}"><span>{{ .Name }}</span></a></li>
+	{{- end }}
+	</ul>
+	<hr>
+	<ul>
+	{{- range .Site.Menus.social }}
+		<li><a {{ if or ( eq .Name "Mastodon" ) ( eq .Name "Twitter" ) }}rel="me" {{ end }}href="{{ .URL }}"><span>{{ .Name }}</span></a></li>
+	{{- end }}
+	</ul>
 </nav>

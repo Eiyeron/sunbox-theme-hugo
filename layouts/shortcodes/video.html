@@ -1,0 +1,20 @@
+<figure>
+    <video {{ with .Get "loop" }}loop="{{.}}" {{ end }}{{ with .Get "autoplay" }}autoplay {{ end }}{{ with .Get "muted" }}muted {{ end }}{{ with .Get "alt" }}title="{{ . }}" {{ end }}>
+        
+        {{-  with .Get "webm" }}
+        <source src="{{ . }}" type="video/webm" />
+        {{- end -}}
+        {{- with .Get "mp4" }}
+        <source src="{{ . }}" type="video/mp4" />
+        {{- end -}}
+        {{ with .Get "ogv" }}
+        <source src="{{ . }}" type="video/ogg" />
+        {{- end -}}
+        {{ with .Get "fallback" -}}
+        <img src="{{.}}" />
+        {{- end }}
+    </video>
+    <figcaption>
+        <h4>{{ .Get "title" }}</h4>
+    </figcaption>
+</figure>

@@ -1,12 +1,11 @@
-title = "Solar Theme"
-theme = "solar-theme-hugo"
+title = "Sunbox Theme"
+theme = "sunbox-theme-hugo"
 paginate = 5
-pygmentsStyle = "solarized-dark" # solarized-light, -dark or -dark256
 copyright = ""
 
 [params]
-  scheme = "preference" # light, dark, gray or preference
-  description = "A wizard is never late"
+  scheme = "gruvbox"
+  description = "Pantoufle"
 
 [menu]
   [[menu.main]]

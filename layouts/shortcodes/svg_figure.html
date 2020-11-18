@@ -1,0 +1,10 @@
+<figure>
+    <object data="{{ .Get "link" }}" {{ with .Get "width" }}width="{{.}}"{{ end }} {{ with .Get "height" }}loop="{{.}}"{{ end }} type="image/svg+xml">
+        {{ with .Get "fallback" }}
+        <img src="{{ . }} " />
+        {{ end }}
+    </object>
+    <figcaption>
+        <h4>{{ .Get "title" }}</h4>
+    </figcaption>
+</figure>
