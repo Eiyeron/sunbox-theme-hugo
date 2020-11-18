@@ -1,17 +1,17 @@
-name = "solar-theme-hugo"
+name = "sunbox-theme-hugo"
 license = "GPLv2"
-licenselink = "https://github.com/bake/solar-theme-hugo/blob/master/LICENSE.md"
-description = "A light or dark minimalistic theme"
+licenselink = "https://github.com/eiyeron/sunbox-theme-hugo/blob/master/LICENSE.md"
+description = "A gruvbox minimalistic theme"
 homepage = "https://github.com/bake/solar-theme-hugo"
-tags = ["blog", "light", "dark", "responsive", "solarized"]
+tags = ["blog", "dark", "responsive", "gruvbox"]
 features = []
-min_version = "0.25.1"
+min_version = "0.0.1"
 
 [author]
-	name = "bake"
-	homepage = "https://192k.pw/"
+	name = "Eiyeron"
+	homepage = "https://retroactive.me/"
 
 [original]
-	author = "mattvh"
-	name = "solar-theme-ghost"
-	repo = "https://github.com/mattvh/solar-theme-ghost"
+	author = "bake"
+	name = "solar-theme-hugo"
+	repo = "https://github.com/bake/solar-theme-hugo"
