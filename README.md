@@ -1,4 +1,4 @@
-# Solar Theme for Hugo - Gruvbox edit
+# Sunbox Theme for Hugo - Gruvbox edit of Solar Theme
 
 ## Edits summary
 Those edits were designed to customize the original theme into what backs [my blog][retroactive]
