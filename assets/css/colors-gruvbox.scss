@@ -167,10 +167,9 @@ blockquote {
 
 
 code {
-	color: #a89984;
+color: #a89984;
 }
 
-/* Visual separators for code fences */
-.highlight {
+.highlight, pre code {
 	border-color: #665c54;
 }

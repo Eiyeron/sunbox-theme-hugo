@@ -84,7 +84,7 @@ video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-weight: inherit;
 	vertical-align: baseline;
 }
 article,
@@ -101,9 +101,6 @@ section {
 	display: block;
 }
 
-body {
-	line-height: 1.1;
-}
 blockquote,
 q {
 	quotes: none;
@@ -124,30 +121,19 @@ iframe {
 }
 
 /*** Basics ***/
-body {
+html body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	line-height: 1.7;
 }
 
-a,
-a:active,
-a:visited {
-	text-decoration: none;
-	padding: 2px 4px;
-}
-
 p {
-	margin-bottom: 1rem;
+	margin-bottom: 1em;
 	word-wrap: break-word;
+	text-align: justify;
 }
 ul,
 ol {
-	padding: 0 0 1rem 2rem;
-}
-ol li,
-ul li {
-	margin-top: 0rem;
-	margin-bottom: 0rem;
+	padding: 0 0 1em 2em;
 }
 
 /* Disabling that heavy margin for nested lists */
@@ -175,17 +161,16 @@ sub {
 	font-size: 0.85em;
 }
 
-code {
-	font: 0.90em "PragmataPro Liga", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
-	padding: 2px;
-}
-
 blockquote {
-	margin: 1rem;
-	padding: 0 1rem;
+	margin: 1em;
+	padding: 0 1em;
 	border-left: 2px solid;
 	font-style: italic;
 	line-height: 1.5em;
+}
+
+a {
+	text-decoration: none;
 }
 
 acronym,
@@ -214,7 +199,7 @@ h4, h5, h6 {
 /* Definition lists*/
 dl {
 	text-align: justify;
-	margin: 1rem;
+	margin: 1em;
 }
 dt {
 	font-weight: bold;
@@ -226,7 +211,7 @@ dt:after {
 }
 
 dd {
-	margin-left: 1rem;
+	margin-left: 1em;
 	margin-bottom: 0.5em;
 }
 
@@ -244,6 +229,7 @@ details summary {
 	padding: 2px 4px;
 	font-size: 1.1em;
 	cursor: pointer;
+	background: none;
 }
 
 details[open] summary:after {
@@ -265,61 +251,22 @@ details[open] summary:after {
 
 #header h1 {
 	font-size: 2em;
-	margin-bottom: 4px;
-}
-#header h1 a {
-	border: none;
-	padding: 0;
-}
-
-figure {
-	margin-bottom: 0.5em;
-	padding-top: 0.25em;
-}
-/* Hacking linked figures */
-figure a {
-	border-bottom: none;
-	display:block;
-}
-
-figure a:hover {
-	background: initial;
-}
-figure figcaption {
-	margin: 0 0.5em;
-}
-
-figure figcaption p {
-	font-size: 0.8em;
-}
-figure figcaption .attribution {
-	font-style: italic;
-}
-
-/* Video as figures */
-figure video {
-	max-width: 100%;
-	margin: auto;
-	display: block;
+	margin-bottom: 0.1em;
 }
 
 #footer {
 	width: 600px;
-	margin: 20px auto;
-	padding-top: 1rem;
+	margin: 2em auto;
+	padding-top: 1em;
 	font-size: 0.85em;
 }
 
 #content {
-	width: 600px;
-	margin: 0 auto;
-
 	/* Dropping the duck */
 	background-image: url("/img/duck.svg");
 	background-repeat: no-repeat;
 	background-size: auto 5em;
-	background-position-x: right;
-	background-position-y: bottom;
+	background-position: right bottom;
 }
 
 #sidebar {
@@ -332,13 +279,11 @@ figure video {
 
 #sidebar li {
 	list-style: none;
-	margin: 2px 0;
 }
 
 #sidebar a {
 	border: none;
 	font-size: 1.2em;
-	padding: 0;
 }
 
 #sidebar hr {
@@ -347,31 +292,21 @@ figure video {
 }
 
 
-#sidebar a span {
+/*** Posts ***/
+article hr {
+	width: 75%;
+}
+
+.post-content {
+	margin-bottom: 2em;
+}
+
+.post-content a {
 	padding: 2px 4px;
 }
 
-/*** Posts ***/
-article {
-	margin-bottom: 40px;
-}
-
-article h1 {
-	margin: 0 0 10px 0;
-}
-article h1 a {
-	border: none;
-	padding: 0;
-}
-article h1 a:hover, article h1 a:active {
-	padding: 0;
-}
 article h1 a.anchor {
 	margin-left: 8px;
-}
-
-article p {
-	text-align: justify;
 }
 
 article img {
@@ -387,92 +322,114 @@ article .meta {
 	font-style: italic;
 }
 
-img.left {
-	float: left;
-	margin: 0 1em 1em 0;
-}
-img.right {
-	float: right;
-	margin: 0 0 1em 1em;
-}
-img.center {
-	display: block;
-	text-align: center;
-	margin: 0 auto 1em auto;
+code {
+	font: 0.90em "PragmataPro Liga", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
 }
 
 pre code {
 	display: block;
 	overflow: auto;
 	line-height: 1.2rem;
-	padding: 1rem;
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
-.highlight {
-	margin-top: 1rem;
-	margin-bottom: 1rem;	
-	border-top: solid 1px #665c54;
-	border-bottom: solid 1px #665c54;
-}
-
-code[class*='language-'],
-pre[class*='language-'] {
+	padding: 0 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
+
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+}
+
+mark {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border-top: solid 1px;
+	border-bottom: solid 1px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
 	white-space: pre;
 	white-space: pre-wrap;
 	word-break: break-all;
 	word-wrap: break-word;
-	// Added some fonts
-	font-family: "PragmataPro Liga", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
-	font-size: 0.9em;
-	line-height: 1.5;
+	border: solid 1px;
+	border-width: 1px 0;
+	padding: 1em;
 }
 
+figure {
+	margin-bottom: 0.5em;
+	padding-top: 0.25em;
+}
+
+figure a {
+	border-bottom: none;
+	display:block;
+}
+
+figure a:hover {
+	background: initial;
+}
+figure figcaption {
+	margin: 0 0.5em;
+}
+
+figure figcaption a {
+	display: initial;
+}
+
+figure figcaption p {
+	font-size: 0.85em;
+}
+
+figure figcaption .attribution:before {
+	content: "Attribution: ";
+	display: inline;
+}
+figure figcaption .attribution {
+	font-style: italic;
+}
+
+/* Video as figures */
+figure video {
+	max-width: 100%;
+	margin: auto;
+	display: block;
+}
+
+
+/* Tags */
 
 #tags {
 	display: inline;
 	list-style-type: none;
-	padding-left: 0;
 }
 
 .tag {
 	display: inline;
 }
 
-/*** Pagination ***/
-.postnavigation {
-	padding-top: 10px;
-	text-align: center;
+.tag + .tag {
+	padding: 0 0.25em;
+}
+
+.footnotes {
 	font-size: 0.85em;
 }
 
-.postnavigation .left {
-	float: left;
-}
-
-.postnavigation .right {
-	float: right;
-}
 
 /*** Media Queries ***/
-@media all and (max-width: 870px) {
+@media all and (max-width: 900px) {
 	article img {
 		max-width: 100%;
 	}
 
 	#page,
 	#header,
-	#content,
 	#footer {
 		width: inherit;
 		padding-left: 10px;
@@ -491,27 +448,20 @@ pre[class*='language-'] {
 	#sidebar {
 		text-align: left;
 		width: 100%;
-		margin: 1rem;
-		margin-left: 0;
-		margin-right: 0;
+		margin: 0 0 1em;
 		display: block;
 		text-align: center;
 		position: initial;
-
 	}
 
 	#sidebar hr {
-		margin-left: 0.5rem;
-		margin-right: 0.5rem;
+		margin: 0 0.5em;
 		display: inline;
 	}
 
 	#sidebar ul {
 		display: inline;
-	}
-
-	#sidebar ul {
-		padding-left: 0;
+		padding: 0;
 	}
 
 	#sidebar ul li {
