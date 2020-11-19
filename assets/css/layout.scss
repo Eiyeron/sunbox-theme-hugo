@@ -194,21 +194,21 @@ abbr {
 	border-bottom: 1px dashed;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.5em;
+}
+
 h1 {
 	font-size: 1.3em;
-	margin: 0 0 0.5rem 0;
 }
 h2 {
 	font-size: 1.2em;
-	margin: 0 0 0.5rem 0;
 }
 h3 {
 	font-size: 1.1em;
-	margin: 0 0 0.5rem 0;
 }
 h4, h5, h6 {
 	font-size: 1em;
-	margin: 0 0 0.5rem 0;
 }
 
 /* Definition lists*/
@@ -260,7 +260,7 @@ details[open] summary:after {
 
 #header {
 	width: 600px;
-	margin: 2rem auto 3rem auto;
+	margin: 2em auto;
 }
 
 #header h1 {
@@ -286,11 +286,11 @@ figure a:hover {
 	background: initial;
 }
 figure figcaption {
-	margin: 0 0.5rem;
+	margin: 0 0.5em;
 }
 
 figure figcaption p {
-	font-size: 0.8rem;
+	font-size: 0.8em;
 }
 figure figcaption .attribution {
 	font-style: italic;
@@ -383,7 +383,6 @@ article img {
 }
 
 article .meta {
-	padding-top: 6px;
 	font-size: 0.85em;
 	font-style: italic;
 }
