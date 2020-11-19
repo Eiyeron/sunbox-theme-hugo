@@ -1,0 +1,39 @@
+{{- /* Based on https://raw.githubusercontent.com/gohugoio/hugo/master/tpl/tplimpl/embedded/templates/shortcodes/figure.html */ -}}
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+    {{- if .Get "link" -}}
+        <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
+    {{- end }}
+    {{- $img := (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "src")) -}}
+    {{- if not $img -}}
+    {{ $staticImage := printf "%s%s" (.Site.Params.staticDir | default "static") (.Get "src") }}
+    {{- $img := imageConfig $staticImage }}
+    {{- end -}}
+    {{- if $img -}}
+    <img src="{{ .Get "src" }}"
+         {{- if or (.Get "alt") (.Get "caption") }}
+         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
+         {{- end -}}
+         width="{{ $img.Width }}" height="{{ $img.Height }}"
+    /> <!-- Closing img tag -->
+    {{- else -}}
+    {{- errorf "[ERROR] %s Missing image : %s" ($.Page.Permalink) (.Get "src") -}}
+    {{- end -}}
+    {{- if .Get "link" }}</a>{{ end -}}
+    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+        <figcaption>
+            {{ with (.Get "title") -}}
+                <h4>{{ . }}</h4>
+            {{- end -}}
+            {{- if .Get "caption" -}}<p>
+                {{- .Get "caption" | markdownify -}} </p>
+            {{- end }}
+            {{- if .Get "attr" -}}<p class="attribution">
+                {{- with .Get "attrlink" }}
+                    <a href="{{ . }}">
+                {{- end -}}
+                {{- .Get "attr" | markdownify -}}
+                {{- if .Get "attrlink" }}</a>{{ end }}</p>
+            {{- end }}
+        </figcaption>
+    {{- end }}
+</figure>

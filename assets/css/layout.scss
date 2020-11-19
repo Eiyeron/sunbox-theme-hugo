@@ -286,7 +286,14 @@ figure a:hover {
 	background: initial;
 }
 figure figcaption {
-	margin-left: 0.5rem;
+	margin: 0 0.5rem;
+}
+
+figure figcaption p {
+	font-size: 0.8rem;
+}
+figure figcaption .attribution {
+	font-style: italic;
 }
 
 /* Video as figures */

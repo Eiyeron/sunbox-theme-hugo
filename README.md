@@ -4,15 +4,20 @@
 Those edits were designed to customize the original theme into what backs [my blog][retroactive]
 
 - Reworked the style to use [gruvbox] as a theme instead.
-- Attempted to slim the style out by re-separating color theming from structure and removing structures I won't use.
-- Tried to increase support for older browsers (understand IE) without usage of JS.
+- Attempted to slim the style out by re-separating color theming from structure
+  and removing structures I won't use.
+- Tried to increase support for older browsers (understand IE) without usage of
+  JS.
 - Made the main content's slightly larger.
 - More metadata in the header column, added coloring metadata where applicable.
 - A taxonomy listing at the end of single's archetype.
-- An entry for a Mastodon (or anything else, really) link next to Twitter has been added too.
+- An entry for a Mastodon (or anything else, really) link next to Twitter has
+  been added too.
 - A duck is waiting for you at the end of the page.
 - Dropped pygment syntax highlighting, uses Hugo's default Chroma instead.
 - Added shortcodes because they can help.
+- Rewrote `figure` shortcode to add the image's dimensions to avoid page jumps
+  and adding some markup to a figure's content.
 
 
 [gruvbox]: https://github.com/morhetz/gruvbox
