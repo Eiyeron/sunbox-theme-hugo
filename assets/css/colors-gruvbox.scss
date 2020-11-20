@@ -7,7 +7,7 @@ body {
 }
 
 ::selection {
-	background: rgba(255, 255, 255, 0.05);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 a,
@@ -34,11 +34,10 @@ a:hover, details summary:hover {
 figure {
 	background-color: #3c3836;
 	color: #d5c4a1;
+	figcaption h4 {
+		color: #d5c4a1;
+	}
 }
-figure figcaption h4 {
-	color: #d5c4a1;
-}
-
 
 hr {
 	border-color: #665c54;
@@ -74,12 +73,7 @@ blockquote {
 }
 
 #sidebar a:hover {
-	background-color: transparent;
-}
-
-#sidebar a:hover span {
-	color: #83a598;
-	background-color: #076678;
+	background-color: initial;
 }
 
 #footer {

@@ -1,3 +1,8 @@
+$mainWidth: 700px;
+$sidebarWidth: 200px;
+$sidebarMargin: 20px;
+$mediaQueryWidth: $mainWidth + $sidebarWidth + $sidebarMargin;
+
 /*** Reset ***/
 html,
 body,
@@ -236,92 +241,7 @@ details[open] summary:after {
 	display: none;
 }
 
-
-/*** Structure ***/
-#page {
-	width: 600px;
-	margin: 0 auto;
-	position: relative;
-}
-
-#header {
-	width: 600px;
-	margin: 2em auto;
-}
-
-#header h1 {
-	font-size: 2em;
-	margin-bottom: 0.1em;
-}
-
-#footer {
-	width: 600px;
-	margin: 2em auto;
-	padding-top: 1em;
-	font-size: 0.85em;
-}
-
-#content {
-	/* Dropping the duck */
-	background-image: url("/img/duck.svg");
-	background-repeat: no-repeat;
-	background-size: auto 5em;
-	background-position: right bottom;
-}
-
-#sidebar {
-	position: absolute;
-	text-align: right;
-	width: 160px;
-	top: 0;
-	left: -175px;
-}
-
-#sidebar li {
-	list-style: none;
-}
-
-#sidebar a {
-	border: none;
-	font-size: 1.2em;
-}
-
-#sidebar hr {
-	width: 50%;
-	margin-left: 50%;
-}
-
-
-/*** Posts ***/
-article hr {
-	width: 75%;
-}
-
-.post-content {
-	margin-bottom: 2em;
-}
-
-.post-content a {
-	padding: 2px 4px;
-}
-
-article h1 a.anchor {
-	margin-left: 8px;
-}
-
-article img {
-	display: block;
-	text-align: center;
-	max-width: 100%;
-	height: auto;
-	margin: 0 auto 0.5rem auto;
-}
-
-article .meta {
-	font-size: 0.85em;
-	font-style: italic;
-}
-
+/** Code and Syntax highlighting **/
 code {
 	font: 0.90em "PragmataPro Liga", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
 }
@@ -361,46 +281,119 @@ pre[class*='language-'] {
 	padding: 1em;
 }
 
-figure {
-	margin-bottom: 0.5em;
-	padding-top: 0.25em;
+
+/*** Structure ***/
+#page {
+	width: $mainWidth;
+	margin: 0 auto;
+	position: relative;
 }
 
-figure a {
-	border-bottom: none;
-	display:block;
+#header {
+	width: $mainWidth;
+	margin: 2em auto;
+	h1 {
+		font-size: 2em;
+		margin-bottom: 0.1em;
+	}
 }
 
-figure a:hover {
-	background: initial;
-}
-figure figcaption {
-	margin: 0 0.5em;
-}
-
-figure figcaption a {
-	display: initial;
+#content {
+	/* Dropping the duck */
+	background-image: url("/img/duck.svg");
+	background-repeat: no-repeat;
+	background-size: auto 5em;
+	background-position: right bottom;
 }
 
-figure figcaption p {
+#sidebar {
+	position: absolute;
+	text-align: right;
+	width: 160px;
+	top: 0;
+	left: -$sidebarWidth + $sidebarMargin;
+
+	li {
+		list-style: none;
+	}
+	a {
+		border: none;
+		font-size: 1.2em;
+	}
+	hr {
+		width: 50%;
+		margin-left: 50%;
+	}
+
+}
+
+#footer {
+	width: $mainWidth;
+	margin: 2em auto;
+	padding-top: 1em;
 	font-size: 0.85em;
 }
 
-figure figcaption .attribution:before {
-	content: "Attribution: ";
-	display: inline;
-}
-figure figcaption .attribution {
-	font-style: italic;
+/*** Posts ***/
+
+article {
+	hr {
+		width: 75%;
+	}
+	.post-content a {
+		padding: 2px 4px;
+	}
+
+	img {
+		display: block;
+		text-align: center;
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto 0.5rem auto;
+	}
+
+	.meta {
+		font-size: 0.85em;
+		font-style: italic;
+	}
 }
 
-/* Video as figures */
-figure video {
-	max-width: 100%;
-	margin: auto;
-	display: block;
-}
 
+figure {
+	margin-bottom: 0.5em;
+	padding-top: 0.25em;
+	a {
+		display:block;
+	}
+	a:hover {
+		background: initial;
+	}
+
+	video {
+		max-width: 100%;
+		margin: auto;
+		display: block;
+	}
+
+}
+figcaption {
+	margin: 0 0.5em;
+	a {
+		display: initial;
+	}
+	p {
+		font-size: 0.85em;
+	}
+
+	.attribution {
+		font-style: italic;
+	}
+
+	.attribution:before {
+		content: "Attribution: ";
+		display: inline;
+	}
+}
 
 /* Tags */
 
@@ -423,24 +416,11 @@ figure video {
 
 
 /*** Media Queries ***/
-@media all and (max-width: 900px) {
-	article img {
-		max-width: 100%;
-	}
-
+@media all and (max-width: $mediaQueryWidth) {
 	#page,
 	#header,
 	#footer {
 		width: inherit;
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-
-	#header {
-		background-position: right 20px center;
-	}
-	#header h1,
-	#header p {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
@@ -452,19 +432,15 @@ figure video {
 		display: block;
 		text-align: center;
 		position: initial;
-	}
+		hr, ul, li {
+			display: inline;
+		}
+		hr {
+			margin: 0 0.5em;
+		}
 
-	#sidebar hr {
-		margin: 0 0.5em;
-		display: inline;
-	}
-
-	#sidebar ul {
-		display: inline;
-		padding: 0;
-	}
-
-	#sidebar ul li {
-		display: inline;
+		ul {
+			padding: 0;
+		}
 	}
 }
