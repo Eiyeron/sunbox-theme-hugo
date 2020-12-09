@@ -444,5 +444,8 @@ figcaption {
 		ul {
 			padding: 0;
 		}
+		li + li {
+			margin-left: 0.5em;
+		}
 	}
 }
