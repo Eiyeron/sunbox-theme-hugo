@@ -9,17 +9,12 @@
     {{- $img := imageConfig $staticImage }}
     {{- end -}}
     {{- if $img -}}
-    <img src="{{ .Get "src" }}"
-         {{- if or (.Get "alt") (.Get "caption") }}
-         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
-         {{- end -}}
-         width="{{ $img.Width }}" height="{{ $img.Height }}"
-    /> <!-- Closing img tag -->
+    <img src="{{ .Get "src" }}" {{- if or (.Get "alt") (.Get "caption") }} alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}" {{- end }} width="{{ $img.Width }}" height="{{ $img.Height }}" /><!-- Closing img tag -->
     {{- else -}}
     {{- errorf "[ERROR] %s Missing image : %s" ($.Page.Permalink) (.Get "src") -}}
     {{- end -}}
     {{- if .Get "link" }}</a>{{ end -}}
-    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") }}
         <figcaption>
             {{ with (.Get "title") -}}
                 <h4>{{ . }}</h4>
