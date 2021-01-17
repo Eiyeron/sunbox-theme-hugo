@@ -1,7 +1,7 @@
 $mainWidth: 700px;
-$sidebarWidth: 200px;
+$sidebarWidth: 160px;
 $sidebarMargin: 20px;
-$mediaQueryWidth: $mainWidth + $sidebarWidth + $sidebarMargin;
+$mediaQueryWidth: $mainWidth + ($sidebarWidth + $sidebarMargin )* 2;
 
 /*** Reset ***/
 html,
@@ -311,9 +311,9 @@ pre[class*='language-'] {
 #sidebar {
 	position: absolute;
 	text-align: right;
-	width: 160px;
+	width: $sidebarWidth;
 	top: 0;
-	left: -$sidebarWidth + $sidebarMargin;
+	left: -($sidebarWidth + $sidebarMargin);
 
 	li {
 		list-style: none;
