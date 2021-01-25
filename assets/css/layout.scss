@@ -243,6 +243,10 @@ details[open] summary:after {
 	display: none;
 }
 
+hr {
+	border: solid 1px;
+}
+
 /** Code and Syntax highlighting **/
 code {
 	font: 0.90em "PragmataPro Liga", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
@@ -278,8 +282,8 @@ pre[class*='language-'] {
 	white-space: pre-wrap;
 	word-break: break-all;
 	word-wrap: break-word;
-	border: solid 1px;
-	border-width: 1px 0;
+	border: solid;
+	border-width: 2px 0;
 	padding: 1em;
 }
 
@@ -416,6 +420,38 @@ figcaption {
 	font-size: 0.85em;
 }
 
+/* Tables*/
+/* Inspired by latex.css (https://latex.now.sh/) */
+table {
+  width: auto;
+  max-width: 100%;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  counter-increment: caption;
+}
+/* add bottom border on column table headings  */
+table tr > th[scope='col'] {
+  border-bottom: 1px solid;
+}
+/* add right border on row table headings  */
+table tr > th[scope='row'] {
+  border-right: 1px solid;
+}
+table > tbody > tr:first-child > td,
+table > tbody > tr:first-child > th {
+  border-top: 1px solid;
+}
+table > tbody > tr:last-child > td,
+table > tbody > tr:last-child > th {
+  border-bottom: 1px solid;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem;
+  line-height: 1.1;
+}
 
 /*** Media Queries ***/
 @media all and (max-width: $mediaQueryWidth) {
