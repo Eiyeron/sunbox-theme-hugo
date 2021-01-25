@@ -121,6 +121,7 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	margin: 1em 0;
 }
 iframe {
 	max-width: 100%;
@@ -257,8 +258,7 @@ pre code {
 	overflow: auto;
 	line-height: 1.2rem;
 	padding: 0 1em;
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin: 1em 0;
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
@@ -270,8 +270,7 @@ pre code {
 }
 
 mark {
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin: 1em 0;
 	border-top: solid 1px;
 	border-bottom: solid 1px;
 }
