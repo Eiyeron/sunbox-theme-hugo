@@ -1,19 +1,21 @@
 {{- define "main" }}
 <article class="post">
 	<h1><a href="{{ .Permalink }}">{{ .Title }}</a> {{ if .Draft }}(Draft){{ end }}</h1>
-	<div class="post-content">{{ .Content | safeHTML }}</div>
-	<div class="meta">Posted on <span class="postdate">{{ .Date.Format "02. January 2006" }}</span></div>
-	<div class="meta inline">Tags</div>
-	{{- $taxo := "tags" -}} <!-- Use the plural form here -->
-	{{- if $taxo -}}
-	<ul id="{{ $taxo }}" class="meta">
-	{{- range .Param $taxo }}
-		{{- $name := . -}}
-		{{- with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
-		<li class="tag"><a href="{{ .Permalink }}">{{ $name }}</a></li>
+	<div class="content">{{ .Content | safeHTML }}</div>
+	<footer class="meta">
+		<p>Posted on <span class="postdate">{{ .Date.Format "02. January 2006" }}</span></p>
+		<div>Tags</div>
+		{{- $taxo := "tags" -}} <!-- Use the plural form here -->
+		{{- if $taxo -}}
+		<ul id="{{ $taxo }}">
+		{{- range .Param $taxo }}
+			{{- $name := . -}}
+			{{- with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+			<li class="tag"><a href="{{ .Permalink }}">{{ $name }}</a></li>
+			{{- end }}
+		{{- end -}}
 		{{- end }}
-	{{- end -}}
-	{{- end }}
-	</ul>
+		</ul>
+	</footer>
 </article>
-{{- end }}
+{{- end -}}

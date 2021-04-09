@@ -192,7 +192,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 1.3em;
+	font-size: 1.5em;
 }
 h2 {
 	font-size: 1.2em;
@@ -201,7 +201,7 @@ h3 {
 	font-size: 1.1em;
 }
 h4, h5, h6 {
-	font-size: 1em;
+	font-size: 0.9em;
 }
 
 /* Definition lists*/
@@ -342,10 +342,13 @@ pre[class*='language-'] {
 /*** Posts ***/
 
 article {
+	/* A little bit of margin to improve the post listing eye parsing. */
+	margin-bottom: 2em;
+
 	hr {
 		width: 75%;
 	}
-	.post-content a {
+	.content a {
 		padding: 2px 4px;
 	}
 
@@ -403,8 +406,8 @@ figcaption {
 /* Tags */
 
 #tags {
-	display: inline;
 	list-style-type: none;
+	padding-left: 1em;
 }
 
 .tag {
