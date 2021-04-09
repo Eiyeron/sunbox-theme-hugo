@@ -275,15 +275,13 @@ mark {
 	border-bottom: solid 1px;
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
+pre {
+	border: solid;
+	border-width: 2px 0;
 	white-space: pre;
 	white-space: pre-wrap;
 	word-break: break-all;
 	word-wrap: break-word;
-	border: solid;
-	border-width: 2px 0;
-	padding: 1em;
 }
 
 

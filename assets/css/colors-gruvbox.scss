@@ -42,9 +42,9 @@ figure {
 code {
 	color: #a89984;
 }
-hr, .highlight, pre code {
+
+hr, .highlight, pre {
 	border-color: #665c54;
-	color: #665c54; /* BUG Looks like the color property also alters the border color. Why? */
 }
 
 h1,
