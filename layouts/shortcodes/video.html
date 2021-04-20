@@ -1,5 +1,5 @@
 <figure>
-    <video {{ with .Get "loop" }}loop="{{.}}" {{ end }}{{ with .Get "autoplay" }}autoplay {{ end }}{{ with .Get "muted" }}muted {{ end }}{{ with .Get "alt" }}title="{{ . }}" {{ end }}>
+    <video {{ with .Get "loop" }}loop="{{.}}" {{ end }}{{ with .Get "autoplay" }}autoplay {{ end }}{{ with .Get "muted" }}muted {{ end }}{{ with .Get "alt" }}title="{{ . }}" {{ end }} {{ with .Get "controls" }}controls {{ end }}>
         
         {{-  with .Get "webm" }}
         <source src="{{ . }}" type="video/webm" />
