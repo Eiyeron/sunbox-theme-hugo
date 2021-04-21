@@ -1,4 +1,12 @@
 {{- define "main" -}}
+	{{ $title := .Title}}
+	{{- with .Content }}
+	<article class="post">
+		<h1>{{ $title }}</h1>
+		{{ . }}
+	</article>
+	<hr>
+ 	{{- end }}
 	{{- range .Paginator.Pages }}
 			<article class="post">
 				<h1><a href="{{ .Permalink }}">{{ .Title }}</a> {{ if .Draft }}(Draft){{ end }}</h1>
