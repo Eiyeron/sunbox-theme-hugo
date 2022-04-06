@@ -1,4 +1,4 @@
-$mainWidth: 700px;
+$mainWidth: 800px;
 $sidebarWidth: 160px;
 $sidebarMargin: 20px;
 $mediaQueryWidth: $mainWidth + ($sidebarWidth + $sidebarMargin )* 2;
@@ -127,6 +127,13 @@ iframe {
 	max-width: 100%;
 }
 
+/*** Box sizing ***/
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
 
 /*** Basics ***/
 html body {
