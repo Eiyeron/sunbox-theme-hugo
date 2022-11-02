@@ -256,11 +256,11 @@ hr {
 }
 
 /** Code and Syntax highlighting **/
-code {
-	font: 0.90em "PragmataPro Liga", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
+code, .goat svg {
+	font: 0.90em "PragmataPro Liga", "PragmataPro", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
 }
 
-pre code {
+pre code, .goat svg {
 	display: block;
 	overflow: auto;
 	line-height: 1.2rem;
@@ -276,13 +276,17 @@ pre code {
 	hyphens: none;
 }
 
+.goat svg {
+	max-width: 100%;
+}
+
 mark {
 	margin: 1em 0;
 	border-top: solid 1px;
 	border-bottom: solid 1px;
 }
 
-pre {
+pre, .goat {
 	border: solid;
 	border-width: 2px 0;
 	white-space: pre;

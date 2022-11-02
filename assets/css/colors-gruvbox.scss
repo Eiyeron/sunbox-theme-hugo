@@ -43,7 +43,7 @@ code {
 	color: #a89984;
 }
 
-hr, .highlight, pre {
+hr, .highlight, pre, .goat {
 	border-color: #665c54;
 }
 
@@ -90,7 +90,7 @@ blockquote {
 
 /* Code highlight */
 .chroma .hll { background: #ffffcc }
-.chroma  { color: #ebdbb2; background: #282828 }
+.chroma, .goat  { color: #ebdbb2; background: #1d2021; }
 .chroma .c { color: #a89984; font-style: italic; /*background: #282828*/ } /* Comment */
 .chroma .err { color: #ebdbb2; /*background: #282828*/ } /* Error */
 .chroma .esc { color: #ebdbb2; /*background: #282828*/ } /* Escape */
