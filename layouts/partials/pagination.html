@@ -1,11 +1,12 @@
-{{ if or .Paginator.HasPrev .Paginator.HasNext }}
+{{- $paginator := (.Scratch.Get "paginator" |default .Paginator) -}}
+{{ if or $paginator.HasPrev $paginator.HasNext }}
 	<nav class="pagination" role="pagination">
-		{{ if (.Paginator.HasPrev) }}
-			<a class="newer-posts" href="{{ .Paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer Posts</a>
+		{{ if ($paginator.HasPrev) }}
+			<a class="newer-posts" href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer Posts</a>
 		{{ end }}
-		<span class="page-number">Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
-		{{ if .Paginator.HasNext }}
-			<a class="older-posts" href="{{ .Paginator.Next.URL }}">Older Posts <span aria-hidden="true">&rarr;</span></a>
+		<span class="page-number">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+		{{ if $paginator.HasNext }}
+			<a class="older-posts" href="{{ $paginator.Next.URL }}">Older Posts <span aria-hidden="true">&rarr;</span></a>
 		{{ end }}
 	</nav>
 {{ end }}
