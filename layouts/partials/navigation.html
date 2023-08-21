@@ -3,9 +3,5 @@
 	{{- range .Site.Menus.main -}}
 		<li><a {{ if or ( eq .Name "Mastodon" ) ( eq .Name "Twitter" ) }}rel="me" {{ end }}href="{{ .URL }}"><span>{{ .Name }}</span></a></li>
 	{{- end -}}
-	</ul><hr><ul>
-	{{- range .Site.Menus.social -}}
-		<li><a {{ if or ( eq .Name "Mastodon" ) ( eq .Name "Twitter" ) }}rel="me" {{ end }}href="{{ .URL }}"><span>{{ .Name }}</span></a></li>
-	{{- end -}}
 	</ul>
 </nav>

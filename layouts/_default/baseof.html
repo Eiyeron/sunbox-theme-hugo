@@ -32,6 +32,11 @@
 				Waddling through the interblag with <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/Eiyeron/sunbox-theme-hugo">Sunbox theme</a>.
 			{{- end -}}
 		</p>
+		<ul id="social-links">
+			{{- range .Site.Menus.social -}}
+				<li><a {{ if or ( eq .Name "Mastodon" ) ( eq .Name "Twitter" ) }}rel="me" {{ end }}href="{{ .URL }}"><span>{{ .Name }}</span></a></li>
+			{{- end -}}
+		</ul>		
 	</footer>
 {{- partial "foot.html" . }}
 </body>
