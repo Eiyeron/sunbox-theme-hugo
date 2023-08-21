@@ -349,6 +349,13 @@ pre, .goat {
 	font-size: 0.85em;
 }
 
+/* Container specific to my blog, an alternative list type showing ostly "page" names and a thumbnail. */
+#artwork-list-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+
 /*** Posts ***/
 
 article {
@@ -374,6 +381,14 @@ article {
 		font-size: 0.85em;
 		font-style: italic;
 	}
+
+	&.artwork-thumbnail {
+		img {
+			max-width: 320px;
+			max-height: 240px;
+		}
+		display: block;
+		}
 }
 
 
