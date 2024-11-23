@@ -3,6 +3,16 @@ $sidebarWidth: 160px;
 $sidebarMargin: 20px;
 $mediaQueryWidth: $mainWidth + ($sidebarWidth + $sidebarMargin )* 2;
 
+/* Experimenting with mixin to share style across elements. */
+/* Not really happy about ending up with duplicated rules, but heh. */
+@mixin bordered-section {
+	margin: 1em 0;
+	border-top: solid 2px;
+	border-bottom: solid 2px;
+	border-color: #665c54;
+	padding: 0.5em 1em;
+}
+
 /*** Reset ***/
 html,
 body,
@@ -182,6 +192,21 @@ blockquote {
 	border-left: 2px solid;
 	font-style: italic;
 	line-height: 1.5em;
+	.alert-heading {
+		font-weight: bold;
+		font-size: 1.2rem;
+		&:before {
+			font-weight: bold;
+			content: ">";
+		}
+	}
+	&.alert {
+		@include bordered-section;
+		/* Sigh */
+		font-style: inherit;
+		font-size: 0.9rem;
+		border-left: 0;
+	}
 }
 
 a {
@@ -264,8 +289,6 @@ pre code, .goat svg {
 	display: block;
 	overflow: auto;
 	line-height: 1.2rem;
-	padding: 0 1em;
-	margin: 1em 0;
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
@@ -287,15 +310,12 @@ mark {
 }
 
 pre, .goat {
-	border: solid;
-	border-width: 2px 0;
+	@include bordered-section;
 	white-space: pre;
 	white-space: pre-wrap;
 	word-break: break-all;
 	word-wrap: break-word;
-	margin: 1em 0;
 }
-
 
 /*** Structure ***/
 #page {
@@ -374,9 +394,6 @@ article {
 
 	hr {
 		width: 75%;
-	}
-	.content a {
-		padding: 2px 4px;
 	}
 
 	img {
