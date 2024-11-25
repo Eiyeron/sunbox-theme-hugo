@@ -1,0 +1,5 @@
+<div class="code-snippet">
+    {{- $result := transform.HighlightCodeBlock . }}
+    <div class="language">{{ .Type }}</div>
+    {{ $result.Wrapped }}
+</div>

@@ -5,11 +5,14 @@ $mediaQueryWidth: $mainWidth + ($sidebarWidth + $sidebarMargin )* 2;
 
 /* Experimenting with mixin to share style across elements. */
 /* Not really happy about ending up with duplicated rules, but heh. */
-@mixin bordered-section {
-	margin: 1em 0;
+@mixin bordered-block {
 	border-top: solid 2px;
 	border-bottom: solid 2px;
 	border-color: #665c54;
+}
+
+@mixin padded-block {
+	margin: 1rem 0;
 	padding: 0.5em 1em;
 }
 
@@ -192,6 +195,7 @@ blockquote {
 	border-left: 2px solid;
 	font-style: italic;
 	line-height: 1.5em;
+
 	.alert-heading {
 		font-weight: bold;
 		font-size: 1.2rem;
@@ -201,7 +205,8 @@ blockquote {
 		}
 	}
 	&.alert {
-		@include bordered-section;
+		@include bordered-block;
+		@include padded-block;
 		/* Sigh */
 		font-style: inherit;
 		font-size: 0.9rem;
@@ -281,11 +286,21 @@ hr {
 }
 
 /** Code and Syntax highlighting **/
-code, .goat svg {
+code, .goat svg, .code-snippet .language {
 	font: 0.90em "PragmataPro Liga", "PragmataPro", Iosevka, Menlo, Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
 }
 
+
+pre, .goat {
+	@include bordered-block;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
 pre code, .goat svg {
+	padding: 0.5em;
 	display: block;
 	overflow: auto;
 	line-height: 1.2rem;
@@ -309,12 +324,14 @@ mark {
 	border-bottom: solid 1px;
 }
 
-pre, .goat {
-	@include bordered-section;
-	white-space: pre;
-	white-space: pre-wrap;
-	word-break: break-all;
-	word-wrap: break-word;
+.code-snippet {
+	@include padded-block;
+	.language {
+		float: right;
+		padding: 0 1em;
+		font-size: 0.8rem;
+		line-height: 1.5em;
+	}
 }
 
 /*** Structure ***/
@@ -435,6 +452,9 @@ figure {
 		display: block;
 	}
 
+	.code-snippet {
+		padding: 0;
+	}
 }
 figcaption {
 	margin: 0 0.5em;
@@ -537,5 +557,9 @@ td {
 		li + li {
 			margin-left: 0.5em;
 		}
+	}
+
+	.code-snippet {
+		padding: 0;
 	}
 }

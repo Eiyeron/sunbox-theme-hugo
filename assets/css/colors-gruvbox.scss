@@ -43,6 +43,15 @@ code {
 	color: #a89984;
 }
 
+.code-snippet .language {
+	background-color: #665c54;
+	color: #bdae93;
+	margin: 0;
+	margin-left: auto;
+	width:auto;
+	vertical-align: bottom;
+}
+
 hr, .highlight, pre, .goat {
 	border-color: #665c54;
 }
